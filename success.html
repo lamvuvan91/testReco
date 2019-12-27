@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+
+        .popup-message {
+            width: 782px;
+            height: 350px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding-bottom: 1.5rem;
+            background: #FFFFFF;
+            border: 1px solid #C9C9C9;
+            box-sizing: border-box;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px
+        }
+
+        .success {
+            width: auto;
+            height: auto;
+            padding-top: 10rem;
+            margin: 0 auto;
+            position: relative
+        }
+
+        .center-contain {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+
+        .center-text {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .color-blue {
+            color: #309500;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            text-transform: uppercase;
+            padding-bottom: 1rem;
+        }
+
+        .color-black {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            color: #000000;
+        }
+
+        .btn-close {
+            width: 42px;
+            height: 42px;
+            background-color: #0C001C;
+            border: 0px solid #0C001C;
+            border-radius: 50%;
+            color: #FFFFFF;
+            margin-top: -11rem;
+            margin-right: -1rem;
+            float: right;
+        }
+
+        .btn-close:hover {
+            background-color: #5c5b5c;
+            border: 0px solid #5c5b5c;
+            color: #FFFFFF;
+        }
+
+        .closed {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="popup-message center-contain" id="popup-message">
+        <div class="success">
+            <button class="btn-close" onclick="myFunction()">X</button>
+            <img class="center-contain" src="./img/success.svg">
+            <div class="message">
+                <p class="center-text color-blue">Gửi thành công</p>
+                <p class="center-text">Cảm ơn quý khách đã quan tâm tới dịch vụ của Reco.</p>
+                <p class="center-text"> Đội ngũ kinh doanh của chúng tôi sẽ liên hệ với quý khách trong thời gian sớm
+                    nhất.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function myFunction() {
+            var element = document.getElementById("popup-message");
+            element.classList.add("closed");
+        }
+    </script>
+</body>
+
+</html>

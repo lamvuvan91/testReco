@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .btn-submit {
+            background-color: #C10000;
+            color: #FFFFFF;
+            padding: 0.25rem 2rem;
+        }
+
+        .btn-submit:hover {
+            background-color: #f42929;
+            color: #FFFFFF;
+        }
+
+        .color-red {
+            color: #C10000
+        }
+    </style>
+</head>
+<title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="font-weight-bold pb-4">LIÊN HỆ</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pb-4">
+                    <h4 class="font-weight-bold pb-2">Head Office in Hanoi</h4>
+                    <div class="pb-2">
+                        4th Floor, Sudico Building (HH3), Me Tri Street,<br>Nam Tu
+                        Liem District, Hanoi City, Vietnam
+                    </div>
+                    <div>
+                        <i class="fa fa-phone color-red fa-lg pr-2"></i>
+                        <span>(+84) 243 200 8754</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-weight-bold pb-2">Office in Japan</h4>
+                    <div class="pb-2">
+                        221-0056 3F Yokohama Kinkocho Building,<br>6-3 Kinkocho,
+                        Kanagawa Ward, Yokohama City, Japan
+                    </div>
+                    <div>
+                        <span><i class="fa fa-phone color-red fa-lg pr-2"></i></span>
+                        <span>(+81) 45-228-9010</span>
+                        <span class="px-2">|</span>
+                        <span>Sale: (+81) 45-620-3807</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form class="needs-validation" novalidate>
+                    <div class="form-group form-row">
+                        <div class="col-md-6 validate-field">
+                            <label class="font-weight-bold" for="name">Họ Tên <span class="color-red">*</span></label>
+                            <input type="text" class="form-control" id="name" required></input>
+                            <div class="invalid-feedback">
+                                Nhập họ tên
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <div class="col">
+                            <label class="font-weight-bold" for="company">Tên công ty</label>
+                            <input type="text" class="form-control" id="company">
+                        </div>
+                        <div class="col">
+                            <label class="font-weight-bold" for="">Chức vụ</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <div class="col validate-field">
+                            <label class="font-weight-bold" for="email">Địa chỉ email <span
+                                    class="color-red">*</span></label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                            <div class="invalid-feedback">
+                                Nhập email
+                            </div>
+                        </div>
+                        <div class="col validate-field">
+                            <label class="font-weight-bold" for="phone">Số điện thoại <span
+                                    class="color-red">*</span></label>
+                            <input type="text" class="form-control" id="phone" required>
+                            <div class="invalid-feedback">
+                                Nhap số điện thoại.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <div class="col">
+                            <label class="font-weight-bold" for="contentArea">Nội dung trao đổi</label>
+                            <textarea class="form-control" id="contentArea" rows="5" maxlength="500"></textarea>
+                            <span class="pull-right" id="count_message"></span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn rounded-pill btn-sm btn-submit">Gửi</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        var check = document.getElementsByClassName("validate-field");
+                        Object.entries(check).forEach(element => {
+                            element[1].classList.add('was-validated');
+                        });
+                    }, false);
+                });
+            }, false);
+            var text_max = $('#contentArea')[0].maxLength;
+            var text_start = 0
+            $('#count_message').html(text_start + "/" + text_max);
+            $('#contentArea').keyup(function () {
+                var text_length = $('#contentArea').val().length;
+                var text_remaining = text_max - text_length;
+                $('#count_message').html(text_remaining + "/" + text_max);
+            });
+        })();
+
+    </script>
+</body>
+
+</html>
